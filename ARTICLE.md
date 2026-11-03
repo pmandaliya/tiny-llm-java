@@ -8,7 +8,7 @@ Every week someone in a meeting says "the context window is too small", "lower t
 
 We will build a real (tiny) GPT-style language model in **plain Java — no libraries, no GPU, no Python** — train it on your laptop in about 10–25 minutes, and get it to write Shakespeare-ish text. Along the way, every buzzword gets mapped to an actual line of code.
 
-👉 **Full source code:** `github.com/<your-username>/tiny-llm-java`
+👉 **Full source code:** `github.com/pmandaliya/tiny-llm-java`
 
 Here is what our model produces after 22 minutes of training on a 2-core CPU:
 
@@ -246,7 +246,7 @@ Seeing a model invent a plausible-looking character name that never appears in S
 You need JDK 17+.
 
 ```bash
-git clone https://github.com/<your-username>/tiny-llm-java.git
+git clone https://github.com/pmandaliya/tiny-llm-java.git
 cd tiny-llm-java
 ./run.sh gradcheck        # verifies backprop (seconds)
 ./run.sh train            # ~818k params; 22 min on 2 CPU cores, faster with more cores
@@ -325,6 +325,6 @@ Next time someone says "it's just predicting the next token", you'll know that's
 
 You built the same thing, in Java, on your laptop.
 
-⭐ Code: `github.com/<your-username>/tiny-llm-java` — PRs and experiments welcome.
+⭐ Code: `github.com/pmandaliya/tiny-llm-java` — PRs and experiments welcome.
 
 *Inspired by Andrej Karpathy's nanoGPT and llm.c, and the paper "Attention Is All You Need" (Vaswani et al., 2017).*

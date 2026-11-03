@@ -29,7 +29,7 @@ warmup + cosine decay, gradient clipping, checkpointing, and temperature / top-k
 Requirements: **JDK 17 or newer**. That's it.
 
 ```bash
-git clone https://github.com/<your-username>/tiny-llm-java.git
+git clone https://github.com/pmandaliya/tiny-llm-java.git
 cd tiny-llm-java
 
 ./run.sh gradcheck   # 1. prove the hand-written backprop is correct (5 seconds)
