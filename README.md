@@ -21,6 +21,8 @@ residual connections, cross-entropy loss, **hand-written backpropagation**, Adam
 warmup + cosine decay, gradient clipping, checkpointing, and temperature / top-k / top-p sampling.
 
 > 📖 Companion article: [`ARTICLE.md`](ARTICLE.md) — *"How LLMs Actually Work: Build a GPT in Pure Java and Train It on Your Laptop"*
+>
+> 🌍 Bigger data: [`TRAINING_ON_WIKIPEDIA.md`](TRAINING_ON_WIKIPEDIA.md) — train on every World War II article on Wikipedia, all of Wikipedia, or any text you have
 
 ---
 
@@ -52,6 +54,10 @@ posts, source code, a public-domain book from Project Gutenberg…). ~1 MB or mo
 ./run.sh train --data my_notes.txt --steps 4000 --out checkpoints/notes.bin
 ./run.sh generate --model checkpoints/notes.bin --prompt "Today I"
 ```
+
+Text full of unusual characters? Clean it first with
+`java -cp target/classes dev.tinyllm.data.TextClean --in raw.txt --out clean.txt`.
+To build a corpus from Wikipedia (e.g. all WWII articles), see [TRAINING_ON_WIKIPEDIA.md](TRAINING_ON_WIKIPEDIA.md).
 
 ---
 
@@ -90,6 +96,10 @@ Done in 22.4 min. Best val loss 1.7324. Checkpoint: checkpoints/model.bin
 | `Sampler.java` | text generation | autoregressive decoding, temperature, top-k, top-p |
 | `Generate.java` | CLI for inference | streaming tokens |
 | `GradCheck.java` | numerical gradient test | verifying backprop |
+| `data/WikiFetch.java` | download a Wikipedia category tree via the API | data collection |
+| `data/WikiDump.java` | stream the official Wikipedia XML dump, with filters | data collection at scale |
+| `data/WikiText.java` | wiki markup → plain text | extraction |
+| `data/TextClean.java` | Unicode → ~95 common characters | normalisation, vocabulary control |
 
 ## Architecture
 
