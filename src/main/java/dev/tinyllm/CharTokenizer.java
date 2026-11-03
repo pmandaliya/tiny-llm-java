@@ -32,6 +32,12 @@ public final class CharTokenizer {
 
     public int vocabSize() { return idToChar.length; }
 
+    /** Token id of one character, or -1 if it is not in the vocabulary. */
+    public int id(char c) {
+        Integer id = charToId.get(c);
+        return id == null ? -1 : id;
+    }
+
     public char[] vocab() { return idToChar.clone(); }
 
     public int[] encode(String text) {
